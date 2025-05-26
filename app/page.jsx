@@ -1,43 +1,54 @@
 export default function Home() {
   return (
     <main className="min-h-screen bg-gradient-to-br from-violet-100 via-fuchsia-100 to-pink-100 text-gray-800 font-sans">
-      <section className="w-full max-w-6xl mx-auto px-6 py-24 flex flex-col items-center text-center">
-        <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight tracking-tight drop-shadow-md">
+      {/* HERO */}
+      <section className="w-full max-w-6xl mx-auto px-6 py-24 text-center space-y-8 animate-fadeIn">
+        <h1 className="text-4xl md:text-6xl font-bold leading-tight tracking-tight text-gray-900 drop-shadow-sm">
           Offrez un moment, créez un souvenir éternel
         </h1>
-        <p className="text-xl md:text-2xl max-w-3xl mb-12 text-gray-700">
+        <p className="text-lg md:text-2xl max-w-3xl mx-auto text-gray-700">
           Pour la Fête des Pères, partagez un instant précieux et transformez-le en un livre unique avec LifeBook.
         </p>
         <a
           href="https://lifebook.fr"
-          className="bg-purple-600 hover:bg-purple-700 text-white px-10 py-4 rounded-full font-semibold text-lg shadow-lg transition-transform transform hover:scale-105"
+          className="inline-block bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-md transition-transform hover:scale-105"
         >
           Découvrir LifeBook
         </a>
       </section>
 
-      <section className="max-w-5xl mx-auto px-6 pb-24 grid md:grid-cols-3 gap-10">
-        <div className="bg-white rounded-3xl shadow-xl p-6 transition-all hover:shadow-2xl">
-          <img src="https://raw.githubusercontent.com/Manupri974/images/refs/heads/main/landing%20image%201.png" alt="Moment père-fils" className="rounded-xl mb-5 w-full h-60 object-cover" />
-          <h3 className="font-bold text-xl mb-3 text-purple-700">Souvenirs précieux</h3>
-          <p className="text-base text-gray-600 leading-relaxed">
-            Discutez ensemble, racontez les grands moments, et construisez un récit sur mesure.
-          </p>
-        </div>
-        <div className="bg-white rounded-3xl shadow-xl p-6 transition-all hover:shadow-2xl">
-          <img src="https://raw.githubusercontent.com/Manupri974/images/refs/heads/main/landing%20image%202.png" alt="Interview avec LifeBook" className="rounded-xl mb-5 w-full h-60 object-cover" />
-          <h3 className="font-bold text-xl mb-3 text-purple-700">Interview guidée</h3>
-          <p className="text-base text-gray-600 leading-relaxed">
-            Laissez-vous guider pas à pas, depuis votre téléphone, sans pression ni contrainte.
-          </p>
-        </div>
-        <div className="bg-white rounded-3xl shadow-xl p-6 transition-all hover:shadow-2xl">
-          <img src="https://raw.githubusercontent.com/Manupri974/images/refs/heads/main/landing%20image%203.png" alt="Livre personnalisé" className="rounded-xl mb-5 w-full h-60 object-cover" />
-          <h3 className="font-bold text-xl mb-3 text-purple-700">Un livre à offrir</h3>
-          <p className="text-base text-gray-600 leading-relaxed">
-            Livraison numérique ou imprimée : un cadeau vivant et rempli d’émotions.
-          </p>
-        </div>
+      {/* BÉNÉFICES */}
+      <section className="max-w-6xl mx-auto px-6 pb-24 grid grid-cols-1 md:grid-cols-3 gap-10">
+        {[
+          {
+            title: "Souvenirs précieux",
+            image: "https://raw.githubusercontent.com/Manupri974/images/refs/heads/main/landing%20image%201.png",
+            desc: "Discutez ensemble, racontez les grands moments, et construisez un récit sur mesure.",
+          },
+          {
+            title: "Interview guidée",
+            image: "https://raw.githubusercontent.com/Manupri974/images/refs/heads/main/landing%20image%202.png",
+            desc: "Laissez-vous guider pas à pas, depuis votre téléphone, sans pression ni contrainte.",
+          },
+          {
+            title: "Un livre à offrir",
+            image: "https://raw.githubusercontent.com/Manupri974/images/refs/heads/main/landing%20image%203.png",
+            desc: "Livraison numérique ou imprimée : un cadeau vivant et rempli d’émotions.",
+          },
+        ].map(({ title, image, desc }, idx) => (
+          <div
+            key={idx}
+            className="bg-white rounded-3xl shadow-xl p-6 transition-transform duration-300 hover:shadow-2xl hover:-translate-y-1"
+          >
+            <img
+              src={image}
+              alt={title}
+              className="rounded-2xl mb-5 w-full h-52 object-cover shadow-md transition-transform hover:scale-105"
+            />
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">{title}</h3>
+            <p className="text-gray-600 leading-relaxed text-sm">{desc}</p>
+          </div>
+        ))}
       </section>
     </main>
   );
