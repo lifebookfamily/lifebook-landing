@@ -1,3 +1,5 @@
+import './globals.css'; // 👈 Import du CSS Tailwind
+
 export const metadata = {
   title: "LifeBook – Racontez votre histoire",
   description: "Créez un livre biographique, d'amour ou hommage grâce à l'intelligence artificielle. Un cadeau touchant, dès 8,90 €.",
