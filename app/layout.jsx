@@ -3,7 +3,7 @@ export const metadata = {
   description: "Créez un livre biographique, d'amour ou hommage grâce à l'intelligence artificielle. Un cadeau touchant, dès 8,90 €.",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({ children }) {
   return (
     <html lang="fr">
       <head>
